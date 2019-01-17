@@ -47,4 +47,8 @@ class ActivityA : AppCompatActivity() {
         super.onRestart()
         Log.i(this.localClassName,"onRestart - Done")
     }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        Log.i(this.localClassName,"onBackPressed - Done")
+    }
 }
