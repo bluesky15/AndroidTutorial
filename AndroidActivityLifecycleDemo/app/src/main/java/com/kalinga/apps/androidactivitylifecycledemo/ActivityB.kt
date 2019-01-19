@@ -8,6 +8,11 @@ class ActivityB : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_b_main)
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        val fragment = FragmentB()
+        fragmentTransaction.add(R.id.container, fragment)
+        fragmentTransaction.commit()
         Log.i(this.localClassName,"onCreate - Done")
     }
     override fun onStart() {
@@ -38,10 +43,5 @@ class ActivityB : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         Log.i(this.localClassName,"onRestart - Done")
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        Log.i(this.localClassName,"onBackPressed - Done")
     }
 }
